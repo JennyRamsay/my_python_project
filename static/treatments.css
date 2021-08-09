@@ -1,0 +1,65 @@
+.appointment-form {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.button {
+    padding: 5px 15px; 
+    background: #ccc; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+.treatments-container {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.treatment-card {
+    text-align: center;
+    margin: 30px 20px;
+    border: 1px solid grey;
+    border-radius: 3%;
+    padding: 30px;
+    max-width: 38%;
+    align-items: flex-start;
+    color: #404040;
+}
+
+.treatment-card img {
+    height: 180px;
+    width: 320px;
+}
+
+.treatment-card h3, img, h5 {
+    margin-bottom: 15px;
+}
+
+.above-classes {
+    text-align: center;
+}
+
+.above-classes h6 {
+    font-size: 1em;
+}
+
+h3 {
+    padding: 20px 0 5px;
+    font-size: 1.4em;
+}
+
+.treatment-card a {
+    color: #404040;
+    text-decoration: underline overline;
+}
+

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h1>Customers</h1>
+</header>
+
+<section class="customers">
+  {% for customer in customers %}
+  <div class="card">
+    <div class="top">
+      <h3 class="customer-name">{{ customer.full_name }}</h3>
+      <img src="/static/images/avatar-placeholder.gif" alt="avatar">
+    </div>
+    <div class="bottom">
+      <div class="status">
+        {% if customer.customership == "Premium" %}
+        <h4 style="color: #cdb30c">{{ customer.customership }} Customer</h4>
+        {% else %}
+        <h4 style="color: #404040">{{ customer.customership }} Customer</h4>
+        {% endif %}
+        {% if customer.status == "Active" %}
+        <h4 style="color:#158467">{{ customer.status }}</h4>
+        {% else %}
+        <h4 style="color:#810000">{{ customer.status }}</h4>
+        {% endif %}
+        <a href="/customers/ {{ customer.id }}/edit">Edit Customer</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

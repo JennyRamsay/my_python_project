@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/customers">Back to Customers</a>
+  <h2>Update {{ customer.full_name }}</h2>
+</header>
+
+<form action="/customers/{{  customer.id  }}" method="POST">
+  <section class="container">
+    <main>
+      <label for="full_name">Name</label>
+      <input type="text" name="full_name" value="{{ customer.full_name }}">
+
+      <label for="customership">Customership Type</label>
+      <select name="customership">
+        <option value="Premium">Premium</option>
+        <option value="Standard">Standard</option>
+      </select>
+
+      <label for="status">Customership Status</label>
+      <select name="status">
+        <option value="Active">Active</option>
+        <option value="Deactive">Deactive</option>
+      </select>
+
+      <input class="button" type="submit" value="Update">
+    </main>
+  </section>
+</form>
+{% endblock %}

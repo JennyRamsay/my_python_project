@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h1>Treatments</h1>
+</header>
+
+<section class="container">
+  <section class="treatments-container">
+    {% for treatment in treatments %}
+    <section class="treatment-card">
+      <h3 class="name">{{ treatment.name }}</h3>
+      <img src="/static/images/class.jpg" alt="fitness-class">
+      <h4>Currently runs on a {{ treatment.day_of_week }}</h4>
+      <h5>Time: {{ treatment.time }}</h5>
+      <h5>Maximum Capacity: {{ treatment.capacity }}</h5>
+
+      <a href="/treatments/ {{ treatment.id }}/edit">Edit Treatment</a>
+      <form action="/treatments/{{ treatment.id }}/delete" method="POST">
+        <input class="button" type="submit" value="Remove">
+      </form>
+    </section>
+    {% endfor %}
+  </section>
+</section>
+{% endblock %}

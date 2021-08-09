@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h2>Add a New Customer</h2>
+</header>
+
+<form action="/customers" method="POST">
+  <section class="container">
+    <main>
+      <label for="full_name"> Name</label>
+      <input type="text" name="full_name" placeholder="Enter Customer Name" autocomplete="off">
+
+      <label for="customership">Customership Type</label>
+      <select name="customership">
+        <option value="Premium">Premium</option>
+        <option value="Standard">Standard</option>
+      </select>
+
+      <input class="button" type="submit">
+    </main>
+  </section>
+</form>
+{% endblock %}

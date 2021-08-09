@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h2>Book a treatment for a customer!</h2>
+</header>
+
+<section class="container">
+  <form action="/appointments" method="POST">
+    <section class="appointment-form">
+      <label for="customer">Customer:</label>
+      <select name="customer_id">
+        <option value="" selected disabled hidden>Choose Customer</option>
+        {% for customer in customers %}
+        {% if customer.status != "Active" %}
+        <option value="{{  customer.id  }}" hidden>
+          {{  customer.full_name  }}
+        </option>
+        {% else %}
+        <option value="{{  customer.id  }}">
+          {{  customer.full_name  }}
+        </option>
+        {% endif %}
+        {% endfor %}
+      </select>
+
+      <label for="treatment">Treatment:</label>
+      <select name="treatment_id">
+        <option value="" selected disabled hidden>Choose Treatment</option>
+        {% for treatment in treatments %}
+        <!-- Hides the treatment from the drop down menu if it is full -->
+        {% if treatment.customers_booked == treatment.capacity %}
+        <option value="{{  treatment.id  }}" hidden>
+          {{  treatment.name  }}
+        </option>
+        {% else %}
+        <option value="{{  treatment.id  }}">
+          {{  treatment.name  }}
+        </option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      <input class="button" type="submit" value="Add">
+    </section>
+  </form>
+
+  <section class="above-classes">
+    <h6>Standard Customers can only be booked during Off-Peak Hours</h6>
+    <h6>Off-Peak Hours are between 9:00am and 17:00pm</h6>
+    <h3>Treatments Available</h3>
+  </section>
+
+  <section class="treatments-container">
+    {% for treatment in treatments %}
+    <section class="treatment-card">
+      <h3>{{ treatment.name }}</h3>
+      <img src="/static/images/class.jpg" alt="fitness-class">
+      <h4>Currently runs on a {{ treatment.day_of_week }}</h4>
+      <h5>Time: {{ treatment.time }}</h5>
+      <h5>Capacity Left: {{ treatment.get_capacity_left(treatment.capacity, treatment.customers_booked) }}</h5>
+    </section>
+    {% endfor %}
+  </section>
+{% endblock %}

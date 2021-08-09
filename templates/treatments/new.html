@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h2>Add a New Treatment</h2>
+</header>
+
+<form action="/treatments" method="POST">
+  <section class="container">
+    <main>
+      <label for="name">Treatment Name</label>
+      <input type="text" name="name" autocomplete="off">
+      <label for="day_of_week">Day of the Week</label>
+      <select name="day_of_week">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+
+      <label for="time">Time</label>
+      <input type="time" name="time" value="08:00">
+
+      <label for="capacity">Capacity</label>
+      <input type="number" name="capacity" min="1" max="30">
+
+      <input class="button" type="submit" value="Save">
+    </main>
+  </section>
+</form>
+{% endblock %}

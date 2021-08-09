@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+  <a href="/">Home</a>
+  <h2>All Appointments</h2>
+</header>
+
+<section class="container">
+  <section class="treatments-container">
+    {% for treatment in treatments %}
+    <section class="treatment-card">
+      <!-- Displays customers booked on particular course -->
+      <h3>{{ treatment.name }}</h3>
+      <img src="/static/images/class.jpg" alt="fitness-class">
+      <p>On {{ treatment.day_of_week  }} at {{ treatment.time }} </p>
+      <h5>Customers booked on today's schedule!</h5>
+      {% for appointment in appointments %}
+      <ul>
+        {% if treatment.name == appointment.treatment.name and appointment.customer.status == "Active" %}
+        <li>{{ appointment.customer.full_name }}</li>
+        {% endif %}
+      </ul>
+      {% endfor %}
+      <h5>Space left: {{ treatment.get_capacity_left(treatment.capacity, treatment.customers_booked) }}</h5>
+    </section>
+    {% endfor %}
+  </section>
+</section>
+{% endblock %}
