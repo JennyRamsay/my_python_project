@@ -46,8 +46,7 @@
   </form>
 
   <section class="above-classes">
-    <h6>Standard Customers can only be booked during Off-Peak Hours</h6>
-    <h6>Off-Peak Hours are between 9:00am and 17:00pm</h6>
+    <h6>Hours are between 9:00am and 17:00pm</h6>
     <h3>Treatments Available</h3>
   </section>
 
@@ -58,7 +57,7 @@
       <img src="/static/images/class.jpg" alt="fitness-class">
       <h4>Currently runs on a {{ treatment.day_of_week }}</h4>
       <h5>Time: {{ treatment.time }}</h5>
-      <h5>Capacity Left: {{ treatment.get_capacity_left(treatment.capacity, treatment.customers_booked) }}</h5>
+      <h5></h5>
     </section>
     {% endfor %}
   </section>
