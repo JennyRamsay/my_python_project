@@ -14,7 +14,7 @@
       <img src="/static/images/class.jpg" alt="treatment-image">
       <h4>Currently runs on a {{ treatment.day_of_week }}</h4>
       <h5>Time: {{ treatment.time }}</h5>
-      <h5>Maximum Capacity: {{ treatment.capacity }}</h5>
+      <h5></h5>
 
       <a href="/treatments/ {{ treatment.id }}/edit">Edit Treatment</a>
       <form action="/treatments/{{ treatment.id }}/delete" method="POST">
