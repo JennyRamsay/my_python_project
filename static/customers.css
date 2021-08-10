@@ -3,7 +3,7 @@
     margin: auto;
     width: 100%;
     padding: 30px;
-    color: #2196f3;
+    color: #F875AA;
     display: flex;
     height: 100vh;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
 .card {
     position: relative;
     border-radius: 25px;
-    background-color: #f4f6ff;
+    background-color: #F4F9F9;
     height: 200px;
     width: 28%;
     text-align: left;
@@ -24,7 +24,7 @@
 
 .top {
     border-radius: 25px 25px 0 0;
-    background: #404040;
+    background: #F875AA;
     height: 100px;
     width: 100%;
     position: absolute;
@@ -35,7 +35,7 @@
 
 .top h3 {
     font-size: 1.5em;
-    color: white;
+    color: #F1D1D0;
     margin: 5% 20px 0;
     display: flex;
     flex: 1;
@@ -58,13 +58,13 @@
 }
 
 .bottom a {
-    color: #404040;
+    color: #F875AA;
     text-decoration: underline overline;
 }
 
 .status {
     margin: 10px -100px;
-    color: #404040;
+    color: #F4F9F9;
 }
 
 

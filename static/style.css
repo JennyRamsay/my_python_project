@@ -7,7 +7,7 @@
 
 .container {
     background-color: white;
-    color: #404040;
+    color: #F875AA;
     height: 100vh;
 }
 
@@ -56,7 +56,7 @@ main input[type=number], [type=time] {
 }
 
 body {
-    background: #262626;
+    background: #F875AA;
     color: white;
 }
 
@@ -99,7 +99,7 @@ menu {
     z-index: -1;
     text-align: center;
     font-size: 3em;
-    color: #2196f3;
+    color: #F1D1D0;
     opacity: 0;
     transition: 0.5s;
     line-height: 100vh;
